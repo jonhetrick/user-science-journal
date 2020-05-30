@@ -69,11 +69,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Accessibility Evaluation</h1>
+            <h1>Make User Science Journal Accessible</h1>
             </h2>
             <span class="meta">Posted by
               <a href="#">Jon Hetrick</a>
-              on May 15, 2020</span>
+              on May 29, 2020</span>
           </div>
         </div>
       </div>
@@ -85,47 +85,61 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <h2>Test for Accessibility</h2>
-          <p>We will be testing: <a href="https://arcteryx.com/us/en/">Arcteryx.com</a></p>
+          <h2>Summary of making post accessible</h2>
+          <p>
+            Initially, I was amazed by the results of Google's Lighthouse accessibility software results and the WAVE accessibility report. Overall, my website has scored over 90 and only suggesting a few errors. Showing that Bootstraps Templates initially already have much accessibility in mind.
+          </p>
+          <p>
+            The workflow that I used to analyze to check my User Science Journal for accessibility running the Lighthouse analyzer in the console of my website first. Check under the accessibility section for items that I need to work on and took note of those. Following the Lighthouse results, I took the URL and ran that through the Wave(ADD LINK) website.
+          </p>
+          <p>
+            WAVE gives the user a report similar to Lighthouse, but it helps dig into each part of the code in more detail. So, I took some a couple of those errors and decided to focus on three of them and see if we can correct them and get a high accessibility score overall.
+          </p>
+          <h3>The errors I focused on fixing for this article are:</h3>
+          <ol>
+            <li>Links do not have a discernible name</li>
+            <li>Correcting poor contrast ratios for p tags</li>
+            <li>Add title to iframe</li>
+          </ol>
 
-          <p>The purpose of this article is to show that all websites are never perfect. We always want to make our
-            websites better, and an area that often gets overlooked is the "Accessibility" of that website. For example,
-            government sites have policies in place under Section 508, stating that their disabled employees and
-            nondisabled should all have access to the same information. With assistive technology and the proper pieces
-            put into place by the developers of a website can be "accessible" by everyone. Striving towards building
-            something accessible by all should be a goal for all developers.</p>
+          <h3>Links do not have a discernible name issue</h3>
+          <p>
+            This error is a bit confusing, because it is complaining about our a tags on our social icon links. We don't want any text here for it will take away from the cleanliness of the page. But, we can add an aria-label attribute and this will take care of this issue.
+          </p>
+          <h4>Code Before</h4>
+          <img src="img/Post6/before_aria_label.png" alt="HTML Code block highlighting over a line that includes an "a tag" with no aria-label attribute or URL to the website that icon is suppose to take you to." height="900" width="800">
+          <h4>Code After</h4>
+          <img src="img/Post6/after_aria_label.png" alt="HTML Code block highlighting over a line that includes an "a tag" with an aria-label attribute and URL to the website on the corresponding icon." height="900" width="800">
+  
+          <h3>Poor Contrast Ratio Issue</h3>
+          <p>
+            Found that simply overwriting the color for the blockquote css class to black did the trick.
+          </p>
+          <h4>Code Before</h4>
+          <img src="img/Post6/before_blockquote_issue.png" alt="CSS Code block showing a class with the highlighted row showing a color of grey" height="100" width="200">
+          <h4>Code After</h4>
+          <img src="img/Post6/after_blockquote_issue.png" alt="CSS Code block showing a class with the highlighted row showing a color of black" height="100" width="200">
+          
+          <h3>Missing title for iFrame Issue</h3>
+          <p>
+            The iFrame tag for the video on Post 4 was missing, simply just adding a title to the code. Making that piece of code just that much more  to accessible.
+          </p>
+          <h4>Code Before</h4>
+          <img src="img/Post6/iframe_no_title_issue.png" alt="HTML code block presenting an iframe tag that is missing a title attribute." height="110" width="900">
+          <h4>Code After</h4>
+          <img src="img/Post6/iframe_after_title_issue.png" alt="HTML code block presenting an iframe tag that has title attribute." height="110" width="900">
 
-          <h3>Tools for Testing of: <a href="https://arcteryx.com/us/en/">Arcteryx.com</a> </h3>
-          <p>We will use two main tools that will do the dirty work for digging into the nuts and bolts our website.</p>
-            <h4><a href="https://wave.webaim.org/">Wave</a></h4>
-            <img class="post5-padding"style="border:1px solid black;" src="./img/arcteryx_wave_1.PNG" alt="Wave Accessibility Test Results for arcteryx.com" height="500" width="800">
+          <h3>Challanges of making my site Accessible</h3>
+          <p>
+            The links do not have a discernible name error took a few minutes to Google, but I was able to figure that out fairly quickly. At first glance it just looks like a missing URL, but after re-testing post adding an URL, I was still receiving the same error. Once I discovered the aria-label attribute all was good.
+          </p>
 
-            <h4 style="padding-top: 50px;">Lighthouse</h4>
-            <img class="post5-padding" style="border:1px solid black;" src="./img/Arcteryx_lh_1.PNG" alt="Lighthouse Accessibility Test Results for arcteryx.com" height="500" width="800">
-
-          <h3 style="padding-top: 50px;">Positives:</h3>
-          <p>Features found by our tools that increase accessibility for individuals with disablities.</p>
-          <ul>
-            <li>HTML language tag is valid</li>
-            <li>Buttons have accessible names</li>
-            <li>The Page contains a heading, skip link, or landmark region</li>
-            <li>Webpage has good Alternative text</li>
-          </ul>
-
-          <h3>Issues:</h3>
-          <p>Features found by our tools that are MISSING from the webpage, and if added could increase accessibility for individuals with disablities.</p>
-          <ul>
-            <li>Background and foreground colors do not have a sufficient contrast ratio</li>
-            <li>[id] attributes on the page are not unique</li>
-            <li>Zooming is disabled</li>
-          </ul>
-          <p>The issues above seem to be quite small. The biggest change would be re-desgining the homepage, to include a better contrast ratio with the colors chosen. This may or may not be needed depending on how far off they are on the contrast ratio scale. With [id] attributes and the zooming disabled, this could be an easy code change for their developers.</p>
-
-          <blockquote class="quote" cite="https://developers.google.com/web/tools/lighthouse">
-            <p>"Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged."</p>
-            <p>-Google Lighthouse</p>
-          </blockquote>
-
+          <h3>
+            Review of using a bootstrap template with accessibility in mind.
+          </h3>
+          <p>
+            The bootstrap framework is a solid start in building a webpage. The accessibility concerns are minimal from my experience of using bootstrap templates. Example being my personal "Accessibility Evaluation" blog post, which I have not touched besides some text, links, and images already have an accessibility rating of 93 on Google's Lighthouse tool. Running through tools like a wave as well, before even touching the code as well, we can see that ARIA elements are present in the bootstrap template. Furthermore, the templates are already responsive to user's devices.
+          </p>
         </div>
       </div>
     </div>
