@@ -12,17 +12,20 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script src="https://www.googletagmanager.com/gtag/js?id=UA-164523770-1" async></script>
   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-      gtag("config", "UA-164523770-1");
+    gtag("config", "UA-164523770-1");
   </script>
 
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css " rel="stylesheet">
+
+  <!-- Custom Favicon Image -->
+  <link rel="icon" href="/favicon.ico?v=1.0" type="image/x-icon" />
 
   <!-- Custom fonts for this template -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -99,13 +102,20 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <h2>Summary of making post accessible</h2>
           <p>
-            Initially, I was amazed by the results of Google's Lighthouse accessibility software results and the WAVE accessibility report. Overall, my website has scored over 90 and only suggesting a few errors. Showing that Bootstraps Templates initially already have much accessibility in mind.
+            Initially, I was amazed by the results of Google's Lighthouse accessibility software results and the WAVE
+            accessibility report. Overall, my website has scored over 90 and only suggesting a few errors. Showing that
+            Bootstraps Templates initially already have much accessibility in mind.
           </p>
           <p>
-            The workflow that I used to analyze to check my User Science Journal for accessibility running the Lighthouse analyzer in the console of my website first. Check under the accessibility section for items that I need to work on and took note of those. Following the Lighthouse results, I took the URL and ran that through the Wave website.
+            The workflow that I used to analyze to check my User Science Journal for accessibility running the
+            Lighthouse analyzer in the console of my website first. Check under the accessibility section for items that
+            I need to work on and took note of those. Following the Lighthouse results, I took the URL and ran that
+            through the Wave website.
           </p>
           <p>
-            WAVE gives the user a report similar to Lighthouse, but it helps dig into each part of the code in more detail. So, I took some a couple of those errors and decided to focus on three of them and see if we can correct them and get a high accessibility score overall.
+            WAVE gives the user a report similar to Lighthouse, but it helps dig into each part of the code in more
+            detail. So, I took some a couple of those errors and decided to focus on three of them and see if we can
+            correct them and get a high accessibility score overall.
           </p>
           <h3>The errors I focused on fixing for this article are:</h3>
           <ol>
@@ -116,41 +126,61 @@
 
           <h3>Links do not have a discernible name issue</h3>
           <p>
-            This error is a bit confusing, because it is complaining about our a tags on our social icon links. We don't want any text here for it will take away from the cleanliness of the page. But, we can add an aria-label attribute and this will take care of this issue.
+            This error is a bit confusing, because it is complaining about our a tags on our social icon links. We don't
+            want any text here for it will take away from the cleanliness of the page. But, we can add an aria-label
+            attribute and this will take care of this issue.
           </p>
           <h4>Code Before</h4>
-          <img src="img/Post6/before_aria_label.png" alt="HTML Code block highlighting over a line that includes an "a tag" with no aria-label attribute or URL to the website that icon is suppose to take you to." height="900" width="800">
+          <img src="img/Post6/before_aria_label.png" alt="HTML Code block highlighting over a line that includes an " a
+            tag" with no aria-label attribute or URL to the website that icon is suppose to take you to." height="900"
+            width="800">
           <h4>Code After</h4>
-          <img src="img/Post6/after_aria_label.png" alt="HTML Code block highlighting over a line that includes an "a tag" with an aria-label attribute and URL to the website on the corresponding icon." height="900" width="800">
-  
+          <img src="img/Post6/after_aria_label.png" alt="HTML Code block highlighting over a line that includes an " a
+            tag" with an aria-label attribute and URL to the website on the corresponding icon." height="900"
+            width="800">
+
           <h3>Poor Contrast Ratio Issue</h3>
           <p>
             Found that simply overwriting the color for the blockquote css class to black did the trick.
           </p>
           <h4>Code Before</h4>
-          <img src="img/Post6/before_blockquote_issue.png" alt="CSS Code block showing a class with the highlighted row showing a color of grey" height="100" width="200">
+          <img src="img/Post6/before_blockquote_issue.png"
+            alt="CSS Code block showing a class with the highlighted row showing a color of grey" height="100"
+            width="200">
           <h4>Code After</h4>
-          <img src="img/Post6/after_blockquote_issue.png" alt="CSS Code block showing a class with the highlighted row showing a color of black" height="100" width="200">
-          
+          <img src="img/Post6/after_blockquote_issue.png"
+            alt="CSS Code block showing a class with the highlighted row showing a color of black" height="100"
+            width="200">
+
           <h3>Missing title for iFrame Issue</h3>
           <p>
-            The iFrame tag for the video on Post 4 was missing, simply just adding a title to the code. Making that piece of code just that much more  to accessible.
+            The iFrame tag for the video on Post 4 was missing, simply just adding a title to the code. Making that
+            piece of code just that much more to accessible.
           </p>
           <h4>Code Before</h4>
-          <img src="img/Post6/iframe_no_title_issue.png" alt="HTML code block presenting an iframe tag that is missing a title attribute." height="110" width="900">
+          <img src="img/Post6/iframe_no_title_issue.png"
+            alt="HTML code block presenting an iframe tag that is missing a title attribute." height="110" width="900">
           <h4>Code After</h4>
-          <img src="img/Post6/iframe_after_title_issue.png" alt="HTML code block presenting an iframe tag that has title attribute." height="110" width="900">
+          <img src="img/Post6/iframe_after_title_issue.png"
+            alt="HTML code block presenting an iframe tag that has title attribute." height="110" width="900">
 
           <h3>Challanges of making my site Accessible</h3>
           <p>
-            The links do not have a discernible name error took a few minutes to Google, but I was able to figure that out fairly quickly. At first glance it just looks like a missing URL, but after re-testing post adding an URL, I was still receiving the same error. Once I discovered the aria-label attribute all was good.
+            The links do not have a discernible name error took a few minutes to Google, but I was able to figure that
+            out fairly quickly. At first glance it just looks like a missing URL, but after re-testing post adding an
+            URL, I was still receiving the same error. Once I discovered the aria-label attribute all was good.
           </p>
 
           <h3>
             Review of using a bootstrap template with accessibility in mind.
           </h3>
           <p>
-            The bootstrap framework is a solid start in building a webpage. The accessibility concerns are minimal from my experience of using bootstrap templates. Example being my personal "Accessibility Evaluation" blog post, which I have not touched besides some text, links, and images already have an accessibility rating of 93 on Google's Lighthouse tool. Running through tools like a wave as well, before even touching the code as well, we can see that ARIA elements are present in the bootstrap template. Furthermore, the templates are already responsive to user's devices.
+            The bootstrap framework is a solid start in building a webpage. The accessibility concerns are minimal from
+            my experience of using bootstrap templates. Example being my personal "Accessibility Evaluation" blog post,
+            which I have not touched besides some text, links, and images already have an accessibility rating of 93 on
+            Google's Lighthouse tool. Running through tools like a wave as well, before even touching the code as well,
+            we can see that ARIA elements are present in the bootstrap template. Furthermore, the templates are already
+            responsive to user's devices.
           </p>
         </div>
       </div>
